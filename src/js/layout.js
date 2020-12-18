@@ -4,6 +4,11 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Bmi } from "./views/bmi";
+import { Workouts } from "./views/workouts";
+import { Cc } from "./views/cc";
+import { Login } from "./views/login";
+import { Createacc } from "./views/createacc";
+import { About } from "./views/about";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
@@ -25,7 +30,12 @@ const Layout = () => {
 					{/** NAVBAR GOES HERE */}
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exat path="/bmi" component={Bmi} />
+						<Route exact path="/cc" component={Cc} />
+						<Route exact path="/workouts" component={Workouts} />
+						<Route exact path="/bmi" component={Bmi} />
+						<Route exact path="/login" component={Login} />
+						<Route exact path="/createacc" component={Createacc} />
+						<Route exact path="/about" component={About} />
 						<Route>
 							<h1>Not found!</h1>
 						</Route>

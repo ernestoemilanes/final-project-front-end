@@ -35,14 +35,25 @@ export const Home = () => (
 								</a>
 								<div className="dropdown-content">
 									<a href="#">Calories Counter</a>
-									<a href="#">Water Tracker</a>
+									<a href="#">Workouts</a>
 									<a href="/bmi">BMI</a>
+								</div>
+							</div>
+						</li>
+						<li className="nav-item dropdown">
+							<div className="dropdown">
+								<a href="#" className="nav-link">
+									Fitness Account
+								</a>
+								<div className="dropdown-content">
+									<a href="#">Login</a>
+									<a href="#">Create Account</a>
 								</div>
 							</div>
 						</li>
 						<li className="nav-item">
 							<a className="nav-link" href="#">
-								About
+								About Us
 							</a>
 						</li>
 					</ul>
