@@ -15,6 +15,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			createUser: (param1, param2, param3, param4) => {
+				const data = {
+					first_name: param1,
+					last_name: param2,
+					password: param3,
+					email: param4
+				};
+				fetch("https://3000-b2426839-f574-4e21-aa66-4742a66f6dcb.ws-us03.gitpod.io/create-account", {
+					method: "POST", // or 'PUT'
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(data)
+				})
+					.then(response => response.json())
+					.then(data => {
+						console.log("Success:", data);
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

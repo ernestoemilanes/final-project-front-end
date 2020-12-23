@@ -5,9 +5,15 @@
 }
 
 
+
+
 header,
 section {
   overflow-x: hidden;
+}
+
+header {
+    height: 100vh;
 }
 
 :root {

@@ -1,13 +1,12 @@
 import React from "react";
-import manRunning from "../../img/man-running.png";
 
-export const Home = () => (
+export const Navigation = () => (
 	<>
 		{/* Container Fluid */}
 		<div className="container-fluid p-0">
 			{/* Navbar */}
 			<nav className="navbar navbar-expand-lg ">
-				<a className="navbar-brand" href="#">
+				<a className="navbar-brand" href="/">
 					Fitness App
 				</a>
 				<button
@@ -24,7 +23,7 @@ export const Home = () => (
 					<div className="mr-auto" />
 					<ul className="navbar-nav">
 						<li className="nav-item active">
-							<a className="nav-link" href="#">
+							<a className="nav-link" href="/">
 								Home <span className="sr-only">(current)</span>
 							</a>
 						</li>
@@ -47,7 +46,7 @@ export const Home = () => (
 								</a>
 								<div className="dropdown-content">
 									<a href="/login">Login</a>
-									<a href="/Createacc">Create Account</a>
+									<a href="/signup">Create Account</a>
 								</div>
 							</div>
 						</li>
@@ -62,19 +61,5 @@ export const Home = () => (
 			{/* End of Navbar */}
 		</div>
 		{/* End of Container Fluid */}
-		{/* Jumbotron */}
-		<div className="container text-center">
-			<div className="row">
-				<div className="col-md-7 col-sm-12">
-					<h1>“We are what we repeatedly do. Excellence then is not an act but a habit.”</h1>
-					{/* <h6>ARISOTLE</h6> */}
-					<button className="btn btn-dark">GET STARTED</button>
-				</div>
-				<div className="col-md-5 col-sm-12 h-15">
-					<img src={manRunning} alt="Running" />
-				</div>
-			</div>
-		</div>
-		{/* End of Jumbotron */}
 	</>
 );

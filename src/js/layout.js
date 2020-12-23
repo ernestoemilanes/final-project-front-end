@@ -34,7 +34,7 @@ const Layout = () => {
 						<Route exact path="/workouts" component={Workouts} />
 						<Route exact path="/bmi" component={Bmi} />
 						<Route exact path="/login" component={Login} />
-						<Route exact path="/createacc" component={Createacc} />
+						<Route exact path="/signup" component={Createacc} />
 						<Route exact path="/about" component={About} />
 						<Route>
 							<h1>Not found!</h1>
