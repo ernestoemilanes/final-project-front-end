@@ -21,7 +21,7 @@ export const Createacc = () => {
 					<img src={manRunning} className="img-fluid" alt="image" />
 				</div>
 				<div className="col-md-6 mb-3">
-					<h3 className="signin-text mb-3"> Create Account</h3>
+					<h3 className="signin-text mb-3 text-center text-light"> Create Account</h3>
 					<form>
 						<div className="form-group">
 							<label>First Name</label>
@@ -60,16 +60,18 @@ export const Createacc = () => {
 								onChange={e => setPassword(e.target.value)}
 							/>
 						</div>
-						<div className="form-group form-check">
+						<div className="form-group form-check text-center">
 							<input type="checkbox" name="checkbox" className="form-check-input" id="checkbox" />
 							<label className="form-check-label">Remember Me</label>
 						</div>
-						<button
-							type="button"
-							className="btn btn-class"
-							onClick={() => actions.createUser(firstName, lastName, password, email)}>
-							Create Account
-						</button>
+						<div className="text-center">
+							<button
+								type="button"
+								className="btn btn-light btn-class"
+								onClick={() => actions.createUser(firstName, lastName, password, email)}>
+								Create Account
+							</button>
+						</div>
 					</form>
 				</div>
 			</div>
