@@ -48,9 +48,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ bmi: Math.floor(703 * (parseInt(param1) / (parseInt(param2) * parseInt(param2)))) });
 			},
 
-			bmrResult: (param1, param2, param3) => {
-				// console.log(parseInt(param1) + parseInt(param2));
-				// setStore({ bmi: Math.floor(703 * (parseInt(param1) / (parseInt(param2) * parseInt(param2)))) });
+			bmrResult: (param1, param2, param3, param4) => {
+				setStore({
+					bmr:
+						param4 == "male"
+							? Math.floor(
+									66 + 6.2 * parseInt(param1) + 12.7 * parseInt(param2) - 6.76 * parseInt(param3)
+							  )
+							: Math.floor(
+									655.1 + 4.35 * parseInt(param1) + 4.7 * parseInt(param2) - 4.7 * parseInt(param3)
+							  )
+				});
+				/*
+                    ! 66 + (6.2 x weight) + (12.7 x height) – (6.76 x age) = BMR for males
+                    * 655.1 + (4.35 x weight) + (4.7 x height) – (4.7 x age) = BMR for females
+                */
 			},
 
 			bmiConvertWeight: param1 => {

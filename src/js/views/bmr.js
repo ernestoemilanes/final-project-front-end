@@ -7,7 +7,7 @@ export const Bmr = () => {
 	const [weight, setWeight] = useState();
 	const [height, setHeight] = useState();
 	const [age, setAge] = useState();
-	const [sex, setSex] = useState();
+	const [gender, setGender] = useState();
 	return (
 		<div className="container" style={{ backgroundSize: "100%" }}>
 			<div>
@@ -27,17 +27,37 @@ export const Bmr = () => {
 					<h4>Age</h4>
 					<input id="age" type="text" onChange={e => setAge(e.target.value)} />
 				</div>
+				<div className="col-md-3 text-danger">
+					<form>
+						<input
+							type="radio"
+							id="male"
+							name="gender"
+							value="male"
+							onChange={e => setGender(e.target.value)}
+						/>
+						<label>Male</label>
+						<input
+							type="radio"
+							id="female"
+							name="gender"
+							value="female"
+							onChange={e => setGender(e.target.value)}
+						/>
+						<label>Female</label>
+					</form>
+				</div>
 			</div>
 			<div className="text-center pt-5">
 				<button
 					id="bmrButton"
 					className="btn btn-danger"
-					onClick={() => actions.bmrResult(weight, height, age)}>
+					onClick={() => actions.bmrResult(weight, height, age, gender)}>
 					Click for BMR
 				</button>
 			</div>
 			<div className="text-center text-light pt-5">
-				<h1>2450</h1>
+				<h1>{store.bmr}</h1>
 			</div>
 		</div>
 	);
