@@ -12,38 +12,38 @@ export const Bmi = () => {
 			<div>
 				<Navigation />
 			</div>
-			<h1 className="text-center pt-3">BMI Calculator</h1>
-			<div id="block" className="row justify-content-center text-center pt-3">
+			<h1 className="text-center text-light pt-3">BMI Calculator</h1>
+			<div id="block" className="row justify-content-center text-warning text-center pt-3">
 				<div className="col-md-3">
-					<h4>Weight in (kg): {store.convert_weight} </h4>
+					<h4 className="text-warning">Weight in (kg): {store.convert_weight} </h4>
 					<input id="weight" type="text" placeholder="lbs" onChange={e => setWeight(e.target.value)} />
 					<button
 						id="convertButton"
-						className="btn btn-danger"
+						className="btn btn-warning btn-sm"
 						onClick={() => actions.bmiConvertWeight(weight)}>
 						Click to Convert Lbs to Kg
 					</button>
 				</div>
 				<div className="col-md-3">
-					<h4>Height in (cm): {store.convert_height}</h4>
+					<h4 className="text-warning">Height in (cm): {store.convert_height}</h4>
 					<input id="height" type="text" placeholder="inches" onChange={e => setHeight(e.target.value)} />
 					<button
 						id="convertButton"
-						className="btn btn-success"
+						className="btn btn-warning btn-sm"
 						onClick={() => actions.bmiConvertHeight(height)}>
-						Click to Convert CM to Inches
+						Click to Convert CM to In
 					</button>
 				</div>
 			</div>
-			<div className="row justify-content-center text-center pt-4">
-				<div className="col-md-3">
-					<button id="bmiButton" className="btn btn-light" onClick={() => actions.bmiResult(weight, height)}>
-						Click for BMI
-					</button>
-				</div>
-				<div className="col-md-3">
-					<h3 id="bmi-display">YOUR BMI IS: {store.bmi}</h3>
-				</div>
+			<div className="text-center pt-5">
+				<button id="bmiButton" className="btn btn-warning" onClick={() => actions.bmiResult(weight, height)}>
+					Click for BMI
+				</button>
+			</div>
+			<div className="text-center pt-5">
+				<h1 className="text-warning" id="bmi-display">
+					{store.bmi}
+				</h1>
 			</div>
 		</div>
 	);

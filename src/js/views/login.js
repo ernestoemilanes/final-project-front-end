@@ -21,7 +21,7 @@ export const Login = () => {
 					<h3 className="signin-text mb-3 text-center text-light"> Sign In</h3>
 					<form>
 						<div className="form-group">
-							<label>Email</label>
+							<label className="text-light">Email</label>
 							<input
 								type="email"
 								name="email"
@@ -30,7 +30,7 @@ export const Login = () => {
 							/>
 						</div>
 						<div className="form-group">
-							<label>Password</label>
+							<label className="text-light">Password</label>
 							<input
 								type="password"
 								name="password"
@@ -45,7 +45,7 @@ export const Login = () => {
 						<div className="text-center">
 							<button
 								type="button"
-								className="btn btn-light btn-class"
+								className="btn btn-warning btn-class"
 								onClick={() => actions.loginUser(password, email)}>
 								Login
 							</button>

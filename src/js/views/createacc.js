@@ -24,7 +24,7 @@ export const Createacc = () => {
 					<h3 className="signin-text mb-3 text-center text-light"> Create Account</h3>
 					<form>
 						<div className="form-group">
-							<label>First Name</label>
+							<label className="text-light">First Name</label>
 							<input
 								type="first-name"
 								name="first-name"
@@ -33,7 +33,7 @@ export const Createacc = () => {
 							/>
 						</div>
 						<div className="form-group">
-							<label>Last Name</label>
+							<label className="text-light">Last Name</label>
 							<input
 								type="last-name"
 								name="last-name"
@@ -42,7 +42,7 @@ export const Createacc = () => {
 							/>
 						</div>
 						<div className="form-group">
-							<label>Email</label>
+							<label className="text-light">Email</label>
 							<input
 								type="email"
 								placeholder="johndoe@example.com"
@@ -52,7 +52,7 @@ export const Createacc = () => {
 							/>
 						</div>
 						<div className="form-group">
-							<label>Password</label>
+							<label className="text-light">Password</label>
 							<input
 								type="password"
 								name="password"
@@ -60,16 +60,16 @@ export const Createacc = () => {
 								onChange={e => setPassword(e.target.value)}
 							/>
 						</div>
-						<div className="form-group form-check text-center">
+						<div className="form-group form-check text-left">
 							<input type="checkbox" name="checkbox" className="form-check-input" id="checkbox" />
 							<label className="form-check-label">Remember Me</label>
 						</div>
 						<div className="text-center">
 							<button
 								type="button"
-								className="btn btn-light btn-class"
+								className="btn btn-warning btn-class"
 								onClick={() => actions.createUser(firstName, lastName, password, email)}>
-								Create Account
+								Submit
 							</button>
 						</div>
 					</form>
