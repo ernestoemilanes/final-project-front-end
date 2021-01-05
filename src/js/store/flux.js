@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			bmi: 0,
+			bmr: 0,
 			convert_height: 0,
 			convert_weight: 0,
 			token: null,
@@ -45,6 +46,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			bmiResult: (param1, param2) => {
 				console.log(parseInt(param1) + parseInt(param2));
 				setStore({ bmi: Math.floor(703 * (parseInt(param1) / (parseInt(param2) * parseInt(param2)))) });
+			},
+
+			bmrResult: (param1, param2, param3) => {
+				// console.log(parseInt(param1) + parseInt(param2));
+				// setStore({ bmi: Math.floor(703 * (parseInt(param1) / (parseInt(param2) * parseInt(param2)))) });
 			},
 
 			bmiConvertWeight: param1 => {

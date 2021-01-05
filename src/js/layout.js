@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Bmi } from "./views/bmi";
+import { Bmr } from "./views/bmr";
 import { Workouts } from "./views/workouts";
 import { Cc } from "./views/cc";
 import { Login } from "./views/login";
@@ -33,6 +34,7 @@ const Layout = () => {
 						<Route exact path="/cc" component={Cc} />
 						<Route exact path="/workouts" component={Workouts} />
 						<Route exact path="/bmi" component={Bmi} />
+						<Route exact path="/bmr" component={Bmr} />
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/signup" component={Createacc} />
 						<Route exact path="/about" component={About} />

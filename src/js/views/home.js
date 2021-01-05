@@ -37,6 +37,7 @@ export const Home = () => (
 									<a href="/cc">Calories Counter</a>
 									<a href="/workouts">Workouts</a>
 									<a href="/bmi">BMI</a>
+									<a href="/bmr">BMR</a>
 								</div>
 							</div>
 						</li>
