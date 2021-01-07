@@ -9,7 +9,11 @@ header {
 
 header a {
   font-size: 0.9em;
-  color: whitesmoke
+  color: whitesmoke;
+}
+
+a:hover {
+    color: #FFC107;
 }
 
 header {
