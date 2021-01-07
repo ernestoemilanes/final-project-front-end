@@ -5,7 +5,8 @@ import { Navigation } from "../component/navigation";
 export const Bmr = () => {
 	const { store, actions } = useContext(Context);
 	const [weight, setWeight] = useState();
-	const [height, setHeight] = useState();
+	const [feet, setFeet] = useState();
+	const [inches, setInches] = useState();
 	const [age, setAge] = useState();
 	const [gender, setGender] = useState();
 	return (
@@ -21,7 +22,13 @@ export const Bmr = () => {
 				</div>
 				<div className="col-md-3 text-warning">
 					<h4>Height</h4>
-					<input id="height" type="text" placeholder="inches" onChange={e => setHeight(e.target.value)} />
+					<input id="heightInFeet" type="text" placeholder="feet" onChange={e => setFeet(e.target.value)} />
+					<input
+						id="heightInInches"
+						type="text"
+						placeholder="inches"
+						onChange={e => setInches(e.target.value)}
+					/>
 				</div>
 				<div className="col-md-3 text-warning">
 					<h4>Age</h4>
@@ -52,7 +59,7 @@ export const Bmr = () => {
 				<button
 					id="bmrButton"
 					className="btn btn-warning"
-					onClick={() => actions.bmrResult(weight, height, age, gender)}>
+					onClick={() => actions.bmrResult(weight, feet, inches, age, gender)}>
 					Click for BMR
 				</button>
 			</div>

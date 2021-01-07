@@ -1,41 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Patua+One&family=Rubik&family=Sniglet&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
-
-
-
-header,
-section {
-  overflow-x: hidden;
-}
-
 header {
     height: 100vh;
 }
-// #FDE603
-// #ff512f
+
 :root {
-  --Snigle-font: "Sniglet", cursive;
-  --Rubik: 'Rubik', cursive;
-  --Patua: 'Patua One', cursive;
-  --Lobster: 'Lobster', cursive;
-  --light-black: #2e2c2caf;
-  --bggradient: linear-gradient(to bottom,
-    black, white);
-  --light-gray: rgba(255, 255, 255, 0.8);
+--bggradient: linear-gradient(to bottom,
+    black, gray);
 }
 
 header a {
-  font-family: var(--Snigle-font);
   font-size: 0.9em;
   color: whitesmoke
 }
 
 header {
-  background: #dd6e24;
   background: var(--bggradient);
 }
 
@@ -78,34 +55,4 @@ header .navbar-brand {
 
 header .navlink:hover {
   color: black;
-}
-
-
-header .row .col-md-5 {
-  padding: 4.2vmin 1vmin;
-}
-
-header .row .col-md-7 {
-  padding: 22vmin 1vmin;
-  padding-bottom: 35vmin;
-  font-family: var(--Rubik);
-}
-
-header .row .col-md-5 img {
-  width: 120%;
-}
-
-header .container .col-md-7 h6 {
-  padding: 1vmin;
-  letter-spacing: 4px;
-}
-
-header .container .col-md-7 h1 {
-  font-size: 8vmin;
-  font-weight: bold;
-  padding: 0.1em 0em;
-}
-
-.header .container .col-md-7 p {
-  padding: 1vmin 5vmin;
 }

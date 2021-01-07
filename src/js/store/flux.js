@@ -6,8 +6,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			bmi: 0,
 			bmr: 0,
 			product: null,
-			convert_height: 0,
-			convert_weight: 0,
 			token: null,
 			demo: [
 				{
@@ -91,15 +89,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 
-			bmrResult: (param1, param2, param3, param4) => {
+			bmrResult: (weight, feet, inches, age, gender) => {
 				setStore({
 					bmr:
-						param4 == "male"
+						gender == "male"
 							? Math.floor(
-									66 + 6.2 * parseInt(param1) + 12.7 * parseInt(param2) - 6.76 * parseInt(param3)
+									66 +
+										6.2 * parseInt(weight) +
+										12.7 * (parseInt(feet) * 12 + parseInt(inches)) -
+										6.76 * parseInt(age)
 							  )
 							: Math.floor(
-									655.1 + 4.35 * parseInt(param1) + 4.7 * parseInt(param2) - 4.7 * parseInt(param3)
+									655.1 +
+										4.35 * parseInt(weight) +
+										4.7 * (parseInt(feet) * 12 + parseInt(inches)) -
+										4.7 * parseInt(age)
 							  )
 				});
 				/*
@@ -113,32 +117,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					product: param1
 				});
-			},
-
-			bmiConvertWeight: param1 => {
-				setStore({ convert_weight: parseInt(param1) * 0.453592 });
-				/* 
-                * if the user inputs the weight in kg:
-				    * convert the input # in cm back to lbs
-                    * and input it back into the BMI formula 
-                
-                    ! if (weight in kg) = a number(x) {
-                        ! (x) * 2.20462
-                    ! } 
-                */
-			},
-
-			bmiConvertHeight: param1 => {
-				setStore({ convert_height: parseInt(param1) * 2.54 });
-				/* 
-                * if the user inputs the height in cm:
-				    * convert the input # in cm back to inches
-                    * and input it back into the BMI formula
-                    
-                    ! if (height in cm) = a number(x) {
-                        ! (x) * 0.393701
-                    ! } 
-                */
 			}
 		}
 	};
