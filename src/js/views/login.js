@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { Navigation } from "../component/navigation";
 import { Context } from "../store/appContext";
 
@@ -8,6 +9,7 @@ export const Login = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
+	const history = useHistory();
 	return (
 		<div className="container">
 			<div>
@@ -46,7 +48,14 @@ export const Login = () => {
 							<button
 								type="button"
 								className="btn btn-warning btn-class"
-								onClick={() => actions.loginUser(password, email)}>
+								onClick={async () => {
+									const loggedIn = await actions.loginUser(password, email);
+									if (loggedIn === true) {
+										history.push("/");
+									} else {
+										//show error
+									}
+								}}>
 								Login
 							</button>
 						</div>

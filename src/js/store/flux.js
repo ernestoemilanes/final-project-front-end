@@ -1,8 +1,11 @@
+const apiUrl = "https://3000-b2426839-f574-4e21-aa66-4742a66f6dcb.ws-us03.gitpod.io";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			bmi: 0,
 			bmr: 0,
+			product: null,
 			convert_height: 0,
 			convert_weight: 0,
 			token: null,
@@ -27,7 +30,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					password: param3,
 					email: param4
 				};
-				fetch("https://3000-b2426839-f574-4e21-aa66-4742a66f6dcb.ws-us03.gitpod.io/create-account", {
+
+				const url = `${apiUrl}/create-account`;
+
+				fetch(url, {
 					method: "POST", // or 'PUT'
 					headers: {
 						"Content-Type": "application/json"
@@ -41,6 +47,38 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => {
 						console.error("Error:", error);
 					});
+			},
+
+			loginUser: async (param5, param6) => {
+				const url = `${apiUrl}/login`;
+
+				const data = {
+					email: param6,
+					password: param5
+				};
+
+				try {
+					const response = await fetch(url, {
+						method: "POST", // or 'PUT'
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify(data)
+					});
+					const body = await response.json();
+					if (response.status == 200) {
+						setStore({ token: body.access_token });
+						console.log("logged In");
+						return true;
+					} else {
+						setStore({ token: null });
+					}
+				} catch (error) {
+					console.log(error);
+					return false;
+				}
+
+				return false;
 			},
 
 			bmiResult: (param1, param2) => {
@@ -63,6 +101,13 @@ const getState = ({ getStore, getActions, setStore }) => {
                     ! 66 + (6.2 x weight) + (12.7 x height) – (6.76 x age) = BMR for males
                     * 655.1 + (4.35 x weight) + (4.7 x height) – (4.7 x age) = BMR for females
                 */
+			},
+
+			ccResult: param1 => {
+				console.log(param1);
+				setStore({
+					product: param1
+				});
 			},
 
 			bmiConvertWeight: param1 => {
@@ -89,28 +134,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                         ! (x) * 0.393701
                     ! } 
                 */
-			},
-
-			loginUser: (param5, param6) => {
-				const data = {
-					email: param6,
-					password: param5
-				};
-				console.log(data);
-				fetch("https://3000-b2426839-f574-4e21-aa66-4742a66f6dcb.ws-us03.gitpod.io/login", {
-					method: "POST", // or 'PUT'
-					headers: {
-						"Content-Type": "application/json"
-					},
-					body: JSON.stringify(data)
-				})
-					.then(response => response.json())
-					.then(data => {
-						setStore({ token: data });
-					})
-					.catch(error => {
-						console.error("Error:", error);
-					});
 			}
 		}
 	};
