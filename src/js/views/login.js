@@ -49,7 +49,7 @@ export const Login = () => {
 								type="button"
 								className="btn btn-warning btn-class"
 								onClick={async () => {
-									const loggedIn = await actions.loginUser(password, email);
+									const loggedIn = await actions.loginUser(email, password);
 									if (loggedIn === true) {
 										history.push("/");
 									} else {

@@ -68,7 +68,14 @@ export const Createacc = () => {
 							<button
 								type="button"
 								className="btn btn-warning btn-class"
-								onClick={() => actions.createUser(firstName, lastName, password, email)}>
+								onClick={async () => {
+									const signedIn = await actions.createUser(firstName, lastName, password, email);
+									if (signedIn === true) {
+										history.push("/");
+									} else {
+										//show error
+									}
+								}}>
 								Submit
 							</button>
 						</div>

@@ -34,14 +34,14 @@ export const Navigation = () => {
 							{store.token !== null && (
 								<li className="nav-item dropdown">
 									<div className="dropdown">
-										<a href="#" className="nav-link">
+										<Link to="#" className="nav-link">
 											Apps
-										</a>
+										</Link>
 										<div className="dropdown-content">
-											<a href="/bmi">Calories Counter</a>
-											{/* <a href="/workouts">Workouts</a> */}
-											<a href="/bmi">BMI</a>
-											<a href="/bmr">BMR</a>
+											<Link to="/cc">Calories Counter</Link>
+											{/* <Link to="/workouts">Workouts</Link> */}
+											<Link to="/bmi">BMI</Link>
+											<Link to="/bmr">BMR</Link>
 										</div>
 									</div>
 								</li>
@@ -60,9 +60,9 @@ export const Navigation = () => {
 								</li>
 							)}
 							<li className="nav-item">
-								<a className="nav-link" href="/about">
+								<Link to="/about" className="nav-link">
 									About Us
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>

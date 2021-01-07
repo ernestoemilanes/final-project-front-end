@@ -53,8 +53,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const url = `${apiUrl}/login`;
 
 				const data = {
-					email: param6,
-					password: param5
+					email: param5,
+					password: param6
 				};
 
 				try {
@@ -81,9 +81,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return false;
 			},
 
-			bmiResult: (param1, param2) => {
-				console.log(parseInt(param1) + parseInt(param2));
-				setStore({ bmi: Math.floor(703 * (parseInt(param1) / (parseInt(param2) * parseInt(param2)))) });
+			bmiResult: (weight, feet, inches) => {
+				setStore({
+					bmi: Math.floor(
+						703 *
+							(weight /
+								((parseInt(feet) * 12 + parseInt(inches)) * (parseInt(feet) * 12 + parseInt(inches))))
+					)
+				});
 			},
 
 			bmrResult: (param1, param2, param3, param4) => {
