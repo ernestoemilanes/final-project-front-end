@@ -42,12 +42,29 @@ export const Cc = () => {
 					</form>
 				</div>
 				<div className="col-md-5">
-					<h3>{store.product}</h3>
+					<h3>Calories: {store.productInfo.length > 0 && store.productInfo[0].fields.nf_calories}</h3>
+					<h3>
+						{" "}
+						Cals from fat:{" "}
+						{store.productInfo.length > 0 && store.productInfo[0].fields.nf_calories_from_fat}
+					</h3>
+					<h3>Total Fat: {store.productInfo.length > 0 && store.productInfo[0].fields.nf_total_fat}</h3>
+					<h3>
+						Saturated Fat: {store.productInfo.length > 0 && store.productInfo[0].fields.nf_saturated_fat}
+					</h3>
+					<h3>Sodium: {store.productInfo.length > 0 && store.productInfo[0].fields.nf_sodium}</h3>
+					<h3>Sugar: {store.productInfo.length > 0 && store.productInfo[0].fields.nf_sugars}</h3>
+					<h3>Fiber: {store.productInfo.length > 0 && store.productInfo[0].fields.nf_dietary_fiber}</h3>
+					<h3>Protein: {store.productInfo.length > 0 && store.productInfo[0].fields.nf_protein}</h3>
+					<h3>
+						Ingredients:
+						{store.productInfo.length > 0 && store.productInfo[0].fields.nf_ingredient_statement}
+					</h3>
 				</div>
 			</div>
 			<div className="text-center pt-5">
 				<button id="ccButton" className="btn btn-warning" onClick={() => actions.ccResult(product)}>
-					Click for Calories
+					Click for Nutritional Value
 				</button>
 			</div>
 		</div>

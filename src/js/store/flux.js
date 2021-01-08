@@ -5,7 +5,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			bmi: 0,
 			bmr: 0,
+			bmr_activity: 0,
 			product: null,
+			productInfo: [],
+			productInfoTwo: [],
 			token: null,
 			demo: [
 				{
@@ -112,11 +115,50 @@ const getState = ({ getStore, getActions, setStore }) => {
                 */
 			},
 
-			ccResult: param1 => {
-				console.log(param1);
+			bmrActivityResult: (weight, feet, inches, age, gender, activity) => {
 				setStore({
-					product: param1
+					bmr_activity:
+						gender == "male"
+							? Math.floor(
+									66 +
+										6.2 * parseInt(weight) +
+										12.7 * (parseInt(feet) * 12 + parseInt(inches)) -
+										6.76 * parseInt(age)
+							  ) * parseFloat(activity)
+							: Math.floor(
+									655.1 +
+										4.35 * parseInt(weight) +
+										4.7 * (parseInt(feet) * 12 + parseInt(inches)) -
+										4.7 * parseInt(age)
+							  ) * parseFloat(activity)
 				});
+				/*
+                    ! 66 + (6.2 x weight) + (12.7 x height) – (6.76 x age) = BMR for males
+                    * 655.1 + (4.35 x weight) + (4.7 x height) – (4.7 x age) = BMR for females
+                */
+			},
+
+			ccResult: param1 => {
+				fetch(
+					// `https://nutritionix-api.p.rapidapi.com/v1_1/search/${param1}?fields=nf_protein%2Cnf_calories%2Cnf_fats%2Cnf_saturated_fats%2Cnf_sugars%2Cnf_sodium%2Cnf_dietary_fiber`,
+					`https://nutritionix-api.p.rapidapi.com/v1_1/search/${param1}?fields=nf_protein%2Cnf_calories%2Cnf_sugars%2Cnf_sodium%2Cnf_dietary_fiber%2Cnf_calories_from_fat%2Cnf_total_fat%2Cnf_saturated_fat%2Cnf_ingredient_statement`,
+					{
+						method: "GET",
+						headers: {
+							"x-rapidapi-key": "de68d12f6fmshee53504a91d9fdbp1a6faajsn80cb5e332c9a",
+							"x-rapidapi-host": "nutritionix-api.p.rapidapi.com"
+						}
+					}
+				)
+					.then(res => res.json())
+					.then(response => {
+						setStore({
+							productInfo: response.hits
+						});
+					})
+					.catch(err => {
+						console.error(err);
+					});
 			}
 		}
 	};

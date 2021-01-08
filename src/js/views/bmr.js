@@ -9,6 +9,7 @@ export const Bmr = () => {
 	const [inches, setInches] = useState();
 	const [age, setAge] = useState();
 	const [gender, setGender] = useState();
+	const [activity, setActivity] = useState();
 	return (
 		<div className="container" style={{ backgroundSize: "100%" }}>
 			<div>
@@ -55,6 +56,26 @@ export const Bmr = () => {
 					<label>Female</label>
 				</form>
 			</div>
+			<div className="text-center text-warning pt-5">
+				<form>
+					<input
+						type="radio"
+						id="sedetary"
+						name="activity"
+						value="1.2"
+						onChange={e => setActivity(e.target.value)}
+					/>
+					<label className="pr-3">Sedentary (little to no exercise)</label>
+					<input
+						type="radio"
+						id="lightly_active"
+						name="activity"
+						value="1.375"
+						onChange={e => setActivity(e.target.value)}
+					/>
+					<label>Lightly Active (light exercise 1–3 days per week)</label>
+				</form>
+			</div>
 			<div className="text-center pt-5">
 				<button
 					id="bmrButton"
@@ -63,8 +84,19 @@ export const Bmr = () => {
 					Click for BMR
 				</button>
 			</div>
-			<div className="text-center text-warning pt-5">
-				<h1>{store.bmr}</h1>
+			<div className="text-center pt-5">
+				<button
+					id="bmrButton"
+					className="btn btn-danger"
+					onClick={() => actions.bmrActivityResult(weight, feet, inches, age, gender, activity)}>
+					Click for BMR + Activity Level
+				</button>
+			</div>
+			<div className="text-center text-dark pt-5">
+				<h1>At rest you burn: {store.bmr} calories</h1>
+			</div>
+			<div className="text-center text-dark pt-5">
+				<h1>Based on your activity level you burn: {store.bmr_activity} calories</h1>
 			</div>
 		</div>
 	);
