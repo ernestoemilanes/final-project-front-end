@@ -73,7 +73,31 @@ export const Bmr = () => {
 						value="1.375"
 						onChange={e => setActivity(e.target.value)}
 					/>
-					<label>Lightly Active (light exercise 1–3 days per week)</label>
+					<label className="pr-3">Lightly Active (light exercise 1–3 days per week)</label>
+					<input
+						type="radio"
+						id="moderately_active"
+						name="activity"
+						value="1.55"
+						onChange={e => setActivity(e.target.value)}
+					/>
+					<label className="pr-3">Moderately Active (moderate exercise 3–5 days per week)</label>
+					<input
+						type="radio"
+						id="very_active"
+						name="activity"
+						value="1.725"
+						onChange={e => setActivity(e.target.value)}
+					/>
+					<label className="pr-3">Very Active (hard exercise 6–7 days per week)</label>
+					<input
+						type="radio"
+						id="extra_active"
+						name="activity"
+						value="1.9"
+						onChange={e => setActivity(e.target.value)}
+					/>
+					<label className="pr-3">Extra Active (very hard exercise, training, or a physical job)</label>
 				</form>
 			</div>
 			<div className="text-center pt-5">

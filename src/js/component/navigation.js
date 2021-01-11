@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Navigation = () => {
 	const { store, actions } = useContext(Context);
+	const history = useHistory();
 	return (
 		<>
 			{/* Container Fluid */}
@@ -64,6 +65,20 @@ export const Navigation = () => {
 									About Us
 								</Link>
 							</li>
+							{store.token !== null && (
+								<li className="nav-item">
+									<button
+										type="button"
+										className="btn"
+										style={{ backgroundColor: "transparent", color: "white" }}
+										onClick={() => {
+											store.token = null;
+											history.push("/");
+										}}>
+										Logout
+									</button>
+								</li>
+							)}
 						</ul>
 					</div>
 				</nav>
