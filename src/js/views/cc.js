@@ -10,7 +10,7 @@ export const Cc = () => {
 			<div>
 				<Navigation />
 			</div>
-			<h1 className="text-center text-light pt-5">Calories Counter</h1>
+			<h1 className="text-center text-light pt-5">Food Nutritional Values</h1>
 			<div id="block" className="row justify-content-center text-warning text-center pt-3">
 				<div className="col-md-5">
 					<form>
@@ -33,12 +33,12 @@ export const Cc = () => {
 						<label className="pr-3">Chicken</label>
 						<input
 							type="radio"
-							id="fish"
+							id="salmon"
 							name="product_name"
-							value="fish"
+							value="salmon"
 							onChange={e => setProduct(e.target.value)}
 						/>
-						<label className="pr-3">Fish</label>
+						<label className="pr-3">Salmon</label>
 					</form>
 				</div>
 				<div className="col-md-5">

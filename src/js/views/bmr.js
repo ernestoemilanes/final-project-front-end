@@ -35,26 +35,26 @@ export const Bmr = () => {
 					<h4>Age</h4>
 					<input id="age" type="text" onChange={e => setAge(e.target.value)} />
 				</div>
-			</div>
-			<div className="text-center text-warning pt-5">
-				<form>
-					<input
-						type="radio"
-						id="male"
-						name="gender"
-						value="male"
-						onChange={e => setGender(e.target.value)}
-					/>
-					<label className="pr-3">Male</label>
-					<input
-						type="radio"
-						id="female"
-						name="gender"
-						value="female"
-						onChange={e => setGender(e.target.value)}
-					/>
-					<label>Female</label>
-				</form>
+				<div className="col-md-3 text-warning">
+					<form>
+						<input
+							type="radio"
+							id="male"
+							name="gender"
+							value="male"
+							onChange={e => setGender(e.target.value)}
+						/>
+						<label className="pr-3">Male</label>
+						<input
+							type="radio"
+							id="female"
+							name="gender"
+							value="female"
+							onChange={e => setGender(e.target.value)}
+						/>
+						<label>Female</label>
+					</form>
+				</div>
 			</div>
 			<div className="text-center text-warning pt-5">
 				<form>

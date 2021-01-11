@@ -39,10 +39,10 @@ export const Navigation = () => {
 											Apps
 										</Link>
 										<div className="dropdown-content">
-											<Link to="/cc">Calories Counter</Link>
+											<Link to="/cc">Nutrition Values</Link>
 											{/* <Link to="/workouts">Workouts</Link> */}
-											<Link to="/bmi">BMI</Link>
-											<Link to="/bmr">BMR</Link>
+											<Link to="/bmr">BMR (Basal Metabolic Rate)</Link>
+											<Link to="/bmi">BMI (Body Mass Index) </Link>
 										</div>
 									</div>
 								</li>
