@@ -15,8 +15,8 @@ export const Bmr = () => {
 			<div>
 				<Navigation />
 			</div>
-			<h1 className="text-center text-light pt-3">BMR Calculator</h1>
-			<div id="block" className="row justify-content-center text-center pt-3">
+			<h2 className="text-center text-light pt-3">BMR Calculator</h2>
+			<div id="block" className="row justify-content-center text-center pt-3 h6">
 				<div className="col-md-3 text-warning">
 					<h4>Weight</h4>
 					<input id="weight" type="text" placeholder="lbs" onChange={e => setWeight(e.target.value)} />
@@ -56,7 +56,7 @@ export const Bmr = () => {
 					</form>
 				</div>
 			</div>
-			<div className="text-center text-warning pt-5">
+			<div className="text-center text-warning pt-3">
 				<form>
 					<input
 						type="radio"
@@ -65,7 +65,7 @@ export const Bmr = () => {
 						value="1.2"
 						onChange={e => setActivity(e.target.value)}
 					/>
-					<label className="pr-3">Sedentary (little to no exercise)</label>
+					<label className="pr-3">Sedentary</label>
 					<input
 						type="radio"
 						id="lightly_active"
@@ -73,7 +73,7 @@ export const Bmr = () => {
 						value="1.375"
 						onChange={e => setActivity(e.target.value)}
 					/>
-					<label className="pr-3">Lightly Active (light exercise 1–3 days per week)</label>
+					<label className="pr-3">Lightly Active</label>
 					<input
 						type="radio"
 						id="moderately_active"
@@ -81,7 +81,7 @@ export const Bmr = () => {
 						value="1.55"
 						onChange={e => setActivity(e.target.value)}
 					/>
-					<label className="pr-3">Moderately Active (moderate exercise 3–5 days per week)</label>
+					<label className="pr-3">Moderately Active</label>
 					<input
 						type="radio"
 						id="very_active"
@@ -89,7 +89,7 @@ export const Bmr = () => {
 						value="1.725"
 						onChange={e => setActivity(e.target.value)}
 					/>
-					<label className="pr-3">Very Active (hard exercise 6–7 days per week)</label>
+					<label className="pr-3">Very Active</label>
 					<input
 						type="radio"
 						id="extra_active"
@@ -97,18 +97,16 @@ export const Bmr = () => {
 						value="1.9"
 						onChange={e => setActivity(e.target.value)}
 					/>
-					<label className="pr-3">Extra Active (very hard exercise, training, or a physical job)</label>
+					<label className="pr-3">Extra Active</label>
 				</form>
 			</div>
-			<div className="text-center pt-5">
+			<div className="text-center pt-3">
 				<button
 					id="bmrButton"
-					className="btn btn-warning"
+					className="btn btn-warning pl-4"
 					onClick={() => actions.bmrResult(weight, feet, inches, age, gender)}>
 					Click for BMR
 				</button>
-			</div>
-			<div className="text-center pt-5">
 				<button
 					id="bmrButton"
 					className="btn btn-danger"
@@ -116,11 +114,11 @@ export const Bmr = () => {
 					Click for BMR + Activity Level
 				</button>
 			</div>
-			<div className="text-center text-dark pt-5">
-				<h1>At rest you burn: {store.bmr} calories</h1>
+			<div className="text-center text-dark pt-3">
+				<h3>At rest you burn: {store.bmr} calories</h3>
 			</div>
-			<div className="text-center text-dark pt-5">
-				<h1>Based on your activity level you burn: {store.bmr_activity} calories</h1>
+			<div className="text-center text-dark pt-3">
+				<h3>Based on your activity level you burn: {store.bmr_activity} calories</h3>
 			</div>
 		</div>
 	);
