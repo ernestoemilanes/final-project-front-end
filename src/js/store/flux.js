@@ -52,7 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			loginUser: async (param5, param6) => {
 				const url = `${apiUrl}/login`;
-
+				console.log(param5, param6);
 				const data = {
 					email: param5,
 					password: param6
@@ -92,6 +92,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 
+			cmToFeet: cm => {
+				//turn cm into feet
+				let dirtyFeet = parseInt(cm) / 30.48;
+				//Math.floor isFeet decimal isInches
+				let feet = Math.floor(dirtyFeet);
+				//Multiply is Inches times 12
+				let inches = (dirtyFeet - feet) * 12;
+				return [feet, inches];
+			},
+
 			bmrResult: (weight, feet, inches, age, gender) => {
 				setStore({
 					bmr:
@@ -121,9 +131,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 						gender == "male"
 							? Math.floor(
 									66 +
-										6.2 * parseInt(weight) +
-										12.7 * (parseInt(feet) * 12 + parseInt(inches)) -
-										6.76 * parseInt(age)
+										(6.2 * parseInt(weight) +
+											12.7 * (parseInt(feet) * 12 + parseInt(inches)) -
+											6.76 * parseInt(age))
 							  ) * parseFloat(activity)
 							: Math.floor(
 									655.1 +
@@ -141,7 +151,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			ccResult: param1 => {
 				fetch(
 					// `https://nutritionix-api.p.rapidapi.com/v1_1/search/${param1}?fields=nf_protein%2Cnf_calories%2Cnf_fats%2Cnf_saturated_fats%2Cnf_sugars%2Cnf_sodium%2Cnf_dietary_fiber`,
-					`https://nutritionix-api.p.rapidapi.com/v1_1/search/${param1}?fields=nf_protein%2Cnf_calories%2Cnf_sugars%2Cnf_sodium%2Cnf_dietary_fiber%2Cnf_calories_from_fat%2Cnf_total_fat%2Cnf_saturated_fat%2Cnf_ingredient_statement%2Citem_name`,
+					`https://nutritionix-api.p.rapidapi.com/v1_1/search/${param1}?fields=nf_protein%2Cnf_calories%2Cnf_sugars%2Cnf_sodium%2Cnf_dietary_fiber%2Cnf_calories_from_fat%2Cnf_total_fat%2Cnf_saturated_fat%2Cnf_ingredient_statement%2Citem_name%2Cnf_total_fat%2Cnf_trans_fatty_acid%2Cnf_cholesterol%2Cnf_servings_per_container%2Cnf_vitamin_a_dv%2Cnf_vitamin_c_dv%2Cnf_calcium_dv%2Cnf_iron_dv%2Cnf_total_carbohydrate%2Cnf_serving_size_unit%2Cnf_serving_size_qty`,
+
 					{
 						method: "GET",
 						headers: {

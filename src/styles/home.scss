@@ -1,23 +1,29 @@
-header {
+body {
+    background: #F8F9FA;
     height: 100vh;
 }
 
-:root {
---bggradient: linear-gradient(to bottom,
-    black, gray);
+// navbar left items removed from the end 
+body .nav-item:last-child {
+  padding-right: 10.5em;
 }
 
-header a {
-  font-size: 0.9em;
-  color: whitesmoke;
+body .nav-item {
+  padding: 0.9em
+}
+
+body .navbar-brand {
+  padding-left: 8rem;
+}
+
+a {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: black;
 }
 
 a:hover {
-    color: #FFC107;
-}
-
-header {
-  background: var(--bggradient);
+    color: #28A745;
 }
 
 .dropdown-content {
@@ -38,25 +44,9 @@ header {
 }
 
 .dropdown-content a:hover {
-  background: #FFC107;
+  background: #28A745;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-header .nav-item:last-child {
-  padding-right: 10.5em;
-}
-
-header .nav-item {
-  padding: 0.9em
-}
-
-header .navbar-brand {
-  padding-left: 8rem;
-}
-
-header .navlink:hover {
-  color: black;
 }

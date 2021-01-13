@@ -13,10 +13,8 @@ import { About } from "./views/about";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
-
-// import { Navbar } from "./component/navbar";
-// import { Footer } from "./component/footer";
 import "../styles/home.scss";
+import "../styles/cc.scss";
 
 //create your first component
 const Layout = () => {

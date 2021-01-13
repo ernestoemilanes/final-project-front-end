@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import ref from "/workspace/react-hello-webapp/src/img/referee.png";
 
 export const Navigation = () => {
 	const { store, actions } = useContext(Context);
@@ -11,8 +12,9 @@ export const Navigation = () => {
 			<div className="container-fluid p-0">
 				{/* Navbar */}
 				<nav className="navbar navbar-expand-lg ">
-					<Link to="/" className="navbar-brand">
-						Fitness App
+					<Link to="/" className="navbar-brand" style={{ fontSize: "2em" }}>
+						<img src={ref} className="img-fluid" alt="image" />
+						FitRef
 					</Link>
 					<button
 						className="navbar-toggler"
@@ -69,8 +71,8 @@ export const Navigation = () => {
 								<li className="nav-item">
 									<button
 										type="button"
-										className="btn"
-										style={{ backgroundColor: "transparent", color: "white" }}
+										className="btn btn-success"
+										style={{ color: "black", fontSize: "1em", fontWeight: "500" }}
 										onClick={() => {
 											store.token = null;
 											history.push("/");
