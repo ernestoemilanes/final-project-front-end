@@ -16,11 +16,11 @@ export const Createacc = () => {
 			<div>
 				<Navigation />
 			</div>
-			<div className="container-fluid bg-light py-3 mt-5">
+			<div className="container-fluid py-3 mt-5">
 				<div className="row">
 					<div className="col-md-6 mx-auto">
-						<div className="card card-body" style={{ backgroundColor: "#28A745", borderRadius: "15px" }}>
-							<h3 className="text-center text-light mb-4">Sign-up</h3>
+						<div className="card card-body" style={{ backgroundColor: "#F8F9FA", borderRadius: "15px" }}>
+							<h3 className="text-center text-success mb-4">Sign-up</h3>
 							<fieldset>
 								<div className="input-group mb-3">
 									<div className="input-group-prepend">
@@ -90,7 +90,7 @@ export const Createacc = () => {
 								<div className="text-center">
 									<button
 										type="button"
-										className="btn btn-light btn-class"
+										className="btn btn-success btn-class"
 										onClick={async () => {
 											const signedIn = await actions.createUser(
 												firstName,

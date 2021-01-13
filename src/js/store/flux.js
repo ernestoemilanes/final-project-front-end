@@ -1,4 +1,4 @@
-const apiUrl = "https://3000-b2426839-f574-4e21-aa66-4742a66f6dcb.ws-us03.gitpod.io";
+const apiUrl = "https://3000-b2426839-f574-4e21-aa66-4742a66f6dcb.ws-eu03.gitpod.io";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
