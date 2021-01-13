@@ -11,11 +11,14 @@ export const About = () => {
 				<Navigation />
 			</div>
 			<div className="container pt-5">
-				<p className="text-center" style={{ fontSize: "2em" }}>
-					FitRef was created to educate/inform its users about their physical health. Once you{" "}
-					<Link to="/signup">register</Link>, you will be able to explore a series of apps that include: BMR
-					(Basal Metabolic Rate) and BMI (Body Mass Index). The user can also check out the nutrition label
-					for meals, snacks, and drinks without having to actually buy that product ;). STAY HEALTHY!
+				<p className="text-center" style={{ fontSize: "2em", color: "#28A745", textDecoration: "underline" }}>
+					FitRef was created to educate/inform its users about their physical health.
+				</p>
+				<p className="text-center pt-3" style={{ fontSize: "2em" }}>
+					Once you <Link to="/signup">register</Link>, you will be able to explore a series of apps that
+					include: BMR(Basal Metabolic Rate) and BMI(Body Mass Index). The user can also check out the
+					nutrition label for meals, snacks, and drinks without having to actually buy that product ;). STAY
+					HEALTHY!
 				</p>
 			</div>
 			<div className="text-center pt-4">

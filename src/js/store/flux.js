@@ -133,14 +133,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 									66 +
 										(6.2 * parseInt(weight) +
 											12.7 * (parseInt(feet) * 12 + parseInt(inches)) -
-											6.76 * parseInt(age))
-							  ) * parseFloat(activity)
+											6.76 * parseInt(age)) *
+											parseFloat(activity)
+							  )
 							: Math.floor(
 									655.1 +
 										4.35 * parseInt(weight) +
 										4.7 * (parseInt(feet) * 12 + parseInt(inches)) -
-										4.7 * parseInt(age)
-							  ) * parseFloat(activity)
+										4.7 * parseInt(age) * parseFloat(activity)
+							  )
 				});
 				/*
                     ! 66 + (6.2 x weight) + (12.7 x height) – (6.76 x age) = BMR for males
