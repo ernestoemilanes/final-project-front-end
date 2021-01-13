@@ -15,13 +15,13 @@ export const Bmr = () => {
 			<div>
 				<Navigation />
 			</div>
-			<h2 className="text-center text-light pt-3">BMR Calculator</h2>
+			<h2 className="text-center text-dark pt-3">BMR Calculator</h2>
 			<div id="block" className="row justify-content-center text-center pt-3 h6">
-				<div className="col-md-3 text-warning">
+				<div className="col-md-3 text-dark">
 					<h4>Weight</h4>
 					<input id="weight" type="text" placeholder="lbs" onChange={e => setWeight(e.target.value)} />
 				</div>
-				<div className="col-md-3 text-warning">
+				<div className="col-md-3 text-dark">
 					<h4>Height</h4>
 					<input id="heightInFeet" type="text" placeholder="feet" onChange={e => setFeet(e.target.value)} />
 					<input
@@ -31,12 +31,12 @@ export const Bmr = () => {
 						onChange={e => setInches(e.target.value)}
 					/>
 				</div>
-				<div className="col-md-3 text-warning">
+				<div className="col-md-3 text-dark">
 					<h4>Age</h4>
 					<input id="age" type="text" onChange={e => setAge(e.target.value)} />
 				</div>
 			</div>
-			<div className="text-center text-warning pt-3">
+			<div className="text-center text-dark pt-3">
 				<form>
 					<input
 						type="radio"
@@ -56,7 +56,7 @@ export const Bmr = () => {
 					<label>Female</label>
 				</form>
 			</div>
-			<div className="text-center text-warning pt-3">
+			<div className="text-center text-dark pt-3">
 				<form>
 					<input
 						type="radio"
@@ -101,28 +101,28 @@ export const Bmr = () => {
 				</form>
 			</div>
 			<div id="block" className="row justify-content-center text-center pt-3 h6">
-				<div className="col-md-3 text-warning">
+				<div className="col-md-3 text-dark">
 					<button
 						id="bmrButton"
-						className="btn btn-warning"
+						className="btn btn-lg btn-dark"
 						onClick={() => actions.bmrResult(weight, feet, inches, age, gender)}>
-						Click for BMR
+						BMR
 					</button>
 				</div>
-				<div className="col-md-3 text-warning">
+				<div className="col-md-3 text-dark">
 					<button
 						id="bmrButton"
-						className="btn btn-danger"
+						className="btn btn-lg btn-dark"
 						onClick={() => actions.bmrActivityResult(weight, feet, inches, age, gender, activity)}>
-						Click for BMR + Activity Level
+						+ Activity
 					</button>
 				</div>
 			</div>
-			<div className="text-center text-warning pt-3">
-				<h3>At rest you burn: {store.bmr} calories</h3>
+			<div className="text-center text-dark pt-3">
+				<h3>At rest you burn: {store.bmr} calories daily</h3>
 			</div>
-			<div className="text-center text-danger pt-3">
-				<h3>Based on your activity level you burn: {store.bmr_activity} calories</h3>
+			<div className="text-center text-dark pt-3">
+				<h3>Based on your activity level you burn: {store.bmr_activity} calories daily</h3>
 			</div>
 		</div>
 	);

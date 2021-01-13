@@ -78,7 +78,7 @@ export const Bmi = () => {
 			<div className="text-center pt-5">
 				<button
 					id="bmiButton"
-					className="btn btn-success"
+					className="btn btn-dark btn-lg"
 					onClick={() => {
 						let [ft, inch] = [feet, inches];
 						if (isMetric) {
@@ -86,7 +86,7 @@ export const Bmi = () => {
 						}
 						actions.bmiResult(weight, ft, inch);
 					}}>
-					Click for BMI
+					BMI
 				</button>
 			</div>
 			<div className="text-center pt-5">

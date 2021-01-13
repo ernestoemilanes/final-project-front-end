@@ -11,10 +11,13 @@ export const Cc = () => {
 				<Navigation />
 			</div>
 			<div className="text-center">
-				<label className="pr-2">Product Name:</label>
-				<input type="input" name="product" onChange={e => setProduct(e.target.value)} />
-				<button id="ccButton" className="btn btn-success btn-sm" onClick={() => actions.ccResult(product)}>
-					Click for Nutritional Value
+				<input type="input" name="product" placeholder="product" onChange={e => setProduct(e.target.value)} />
+				<button
+					id="ccButton"
+					className="button"
+					onClick={() => actions.ccResult(product)}
+					style={{ backgroundColor: "#28A745" }}>
+					Search
 				</button>
 			</div>
 			<section className="performance-facts">
@@ -112,7 +115,7 @@ export const Cc = () => {
 								<b>Sodium </b>
 								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_sodium
 									? store.productInfo[0].fields.nf_sodium
-									: 1}
+									: 0}
 								mg
 							</th>
 							<td>
