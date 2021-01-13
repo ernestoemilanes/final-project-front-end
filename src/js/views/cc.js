@@ -26,7 +26,9 @@ export const Cc = () => {
 					</p>
 					<p>
 						Serving Per Container{" "}
-						{store.productInfo.length > 0 && store.productInfo[0].fields.nf_servings_per_container}
+						{store.productInfo.length > 0 && store.productInfo[0].fields.nf_servings_per_container
+							? store.productInfo[0].fields.nf_servings_per_container
+							: 1}
 					</p>
 				</header>
 				<table className="performance-facts__table">
@@ -41,11 +43,15 @@ export const Cc = () => {
 						<tr>
 							<th colSpan="2">
 								<b>Calories </b>
-								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_calories}
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_calories
+									? store.productInfo[0].fields.nf_calories
+									: 0}
 							</th>
 							<td>
 								Calories from Fat{" "}
-								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_calories_from_fat}
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_calories_from_fat
+									? store.productInfo[0].fields.nf_calories_from_fat
+									: 0}
 							</td>
 						</tr>
 						<tr className="thick-row">
@@ -56,7 +62,10 @@ export const Cc = () => {
 						<tr>
 							<th colSpan="2">
 								<b>Total Fat </b>
-								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_total_fat}g
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_total_fat
+									? store.productInfo[0].fields.nf_total_fat
+									: 0}
+								g
 							</th>
 							<td>
 								<b>22%</b>
@@ -66,7 +75,10 @@ export const Cc = () => {
 							<td className="blank-cell" />
 							<th>
 								Saturated Fat{" "}
-								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_saturated_fat}g
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_saturated_fat
+									? store.productInfo[0].fields.nf_saturated_fat
+									: 0}
+								g
 							</th>
 							<td>
 								<b>22%</b>
@@ -86,7 +98,9 @@ export const Cc = () => {
 						<tr>
 							<th colSpan="2">
 								<b>Cholesterol </b>
-								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_cholesterol}
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_cholesterol
+									? store.productInfo[0].fields.nf_cholesterol
+									: 0}
 								mg
 							</th>
 							<td>
@@ -96,7 +110,9 @@ export const Cc = () => {
 						<tr>
 							<th colSpan="2">
 								<b>Sodium </b>
-								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_sodium}
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_sodium
+									? store.productInfo[0].fields.nf_sodium
+									: 1}
 								mg
 							</th>
 							<td>
@@ -106,7 +122,10 @@ export const Cc = () => {
 						<tr>
 							<th colSpan="2">
 								<b>Total Carbohydrate </b>
-								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_total_carbohydrate}g
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_total_carbohydrate
+									? store.productInfo[0].fields.nf_total_carbohydrate
+									: 0}
+								g
 							</th>
 							<td>
 								<b>6%</b>
@@ -116,7 +135,10 @@ export const Cc = () => {
 							<td className="blank-cell" />
 							<th>
 								Dietary Fiber{" "}
-								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_dietary_fiber}g
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_dietary_fiber
+									? store.productInfo[0].fields.nf_dietary_fiber
+									: 0}
+								g
 							</th>
 							<td>
 								<b>4%</b>
@@ -124,13 +146,22 @@ export const Cc = () => {
 						</tr>
 						<tr>
 							<td className="blank-cell" />
-							<th>Sugars {store.productInfo.length > 0 && store.productInfo[0].fields.nf_sugars}g</th>
+							<th>
+								Sugars{" "}
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_sugars
+									? store.productInfo[0].fields.nf_sugars
+									: 0}
+								g
+							</th>
 							<td />
 						</tr>
 						<tr className="thick-end">
 							<th colSpan="2">
 								<b>Protein </b>
-								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_protein}g
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_protein
+									? store.productInfo[0].fields.nf_protein
+									: 0}
+								g
 							</th>
 							<td />
 						</tr>
@@ -141,10 +172,18 @@ export const Cc = () => {
 					<tbody>
 						<tr>
 							<td colSpan="2">
-								Vitamin A {store.productInfo.length > 0 && store.productInfo[0].fields.nf_vitamin_a_dv}%
+								Vitamin A{" "}
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_vitamin_a_dv
+									? store.productInfo[0].fields.nf_vitamin_a_dv
+									: 0}
+								%
 							</td>
 							<td>
-								Vitamin C {store.productInfo.length > 0 && store.productInfo[0].fields.nf_vitamin_c_dv}%
+								Vitamin C{" "}
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_vitamin_c_dv
+									? store.productInfo[0].fields.nf_vitamin_c_dv
+									: 0}
+								%
 							</td>
 						</tr>
 						<tr className="thin-end">
@@ -155,7 +194,13 @@ export const Cc = () => {
 									: 0}
 								%
 							</td>
-							<td>Iron {store.productInfo.length > 0 && store.productInfo[0].fields.nf_iron_dv}%</td>
+							<td>
+								Iron{" "}
+								{store.productInfo.length > 0 && store.productInfo[0].fields.nf_iron_dv
+									? store.productInfo[0].fields.nf_iron_dv
+									: 0}
+								%
+							</td>
 						</tr>
 					</tbody>
 				</table>
