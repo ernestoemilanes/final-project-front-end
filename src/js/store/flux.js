@@ -1,4 +1,4 @@
-const apiUrl = "https://3000-b2426839-f574-4e21-aa66-4742a66f6dcb.ws-eu03.gitpod.io";
+const apiUrl = "https://3000-b2426839-f574-4e21-aa66-4742a66f6dcb.ws-us03.gitpod.io";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			productInfo: [],
 			productInfoTwo: [],
 			token: null,
+			currentUser: null,
 			demo: [
 				{
 					title: "FIRST",
@@ -23,6 +24,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			]
 		},
+		// store.currentUser.id
+		// const data = {
+
+		//         "item_name": param1,
+		//         "user_id": store.currentUser.id,
+		//         "nf_ingredient_statement": null,
+		//         "nf_calories": 136.62,
+		//         "nf_calories_from_fat": 65.34,
+		//         "nf_total_fat": 7.26,
+		//         "nf_saturated_fats": 4.48,
+		//         "nf_sodium": 52.8,
+		//         "nf_dietary_fiber": 0.46,
+		//         "nf_sugars": 14.01,
+		//         "nf_protein": 2.31,
+		//         "nf_serving_size_qty": 1,
+		//         "nf_serving_size_unit": "serving"
+
+		// };
 		actions: {
 			createUser: (param1, param2, param3, param4) => {
 				const data = {
@@ -68,7 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const body = await response.json();
 					if (response.status == 200) {
-						setStore({ token: body.access_token });
+						setStore({ token: body.access_token, currentUser: body.user });
 						console.log("logged In");
 						return true;
 					} else {
