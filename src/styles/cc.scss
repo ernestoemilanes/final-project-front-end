@@ -14,9 +14,10 @@ p {
 .performance-facts {
   border: 1px solid black;
   margin: 20px;
-  justify-content: center;
-  width: 320px;
-  padding: 1rem;
+//   justify-content: center;
+    width: auto;
+    max-width: 400px;
+    padding: 1.2rem;
   table {
     border-collapse: collapse;
   }

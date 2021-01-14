@@ -10,6 +10,8 @@ export const Bmr = () => {
 	const [age, setAge] = useState();
 	const [gender, setGender] = useState();
 	const [activity, setActivity] = useState();
+	const [isMetric, setIsMetric] = useState(false);
+	const [cm, setCm] = useState();
 	return (
 		<div className="container" style={{ backgroundSize: "100%" }}>
 			<div>

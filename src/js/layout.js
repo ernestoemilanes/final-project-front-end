@@ -12,6 +12,7 @@ import { Createacc } from "./views/createacc";
 import { About } from "./views/about";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import { NutritionFacts } from "./views/nutritionfacts";
 import injectContext from "./store/appContext";
 import "../styles/home.scss";
 import "../styles/cc.scss";
@@ -31,6 +32,11 @@ const Layout = () => {
 						<Route exact path="/" component={Home} />
 						<Route exact path="/cc" component={Cc} />
 						<Route exact path="/workouts" component={Workouts} />
+						<Route
+							exact
+							path="/nutritionfacts/:id/:name/:nf_calories/:nf_calories_from_fat/:nf_protein"
+							component={NutritionFacts}
+						/>
 						<Route exact path="/bmi" component={Bmi} />
 						<Route exact path="/bmr" component={Bmr} />
 						<Route exact path="/login" component={Login} />
