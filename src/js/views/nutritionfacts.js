@@ -6,12 +6,64 @@ import PropTypes from "prop-types";
 export const NutritionFacts = props => {
 	const { store, actions } = useContext(Context);
 	const [product, setProduct] = useState();
+	const [itemName, setItemName] = useState(props.match.params.item_name);
+	const [servingSizeQty, setServingSizeQty] = useState(props.match.params.nf_serving_size_qty);
+	const [servingSizeUnit, setServingSizeUnit] = useState(props.match.params.nf_serving_size_unit);
+	const [calories, setCalories] = useState(props.match.params.nf_calories);
+	const [caloriesFromFat, setCaloriesFromFat] = useState(props.match.params.nf_calories_from_fat);
+	const [totalFat, setTotalFat] = useState(props.match.params.nf_total_fat);
+	const [saturatedFats, setSaturatedFats] = useState(props.match.params.nf_saturated_fat);
+	const [transFat, setTransFat] = useState(props.match.params.nf_trans_fatty_acid);
+	const [cholesterol, setCholesterol] = useState(props.match.params.nf_cholesterol);
+	const [sodium, setSodium] = useState(props.match.params.nf_sodium);
+	const [carbohydrate, setCarbohydrate] = useState(props.match.params.nf_total_carbohydrate);
+	const [fiber, setFiber] = useState(props.match.params.nf_dietary_fiber);
+	const [sugars, setSugars] = useState(props.match.params.nf_sugars);
+	const [protein, setProtein] = useState(props.match.params.nf_protein);
+	const [vitaminA, setVitaminA] = useState(props.match.params.nf_vitamin_a_dv);
+	const [vitaminC, setVitaminC] = useState(props.match.params.nf_vitamin_c_dv);
+	const [calcium, setCalcium] = useState(props.match.params.nf_calcium_dv);
+	const [iron, setIron] = useState(props.match.params.nf_iron_dv);
 	const productId = props.match.params.id;
 	console.log(props);
 	return (
 		<>
 			<div>
 				<Navigation />
+			</div>
+			<div className="text-center">
+				<button
+					type="button"
+					className="btn btn-success btn-class"
+					onClick={async () => {
+						const savedProduct = await actions.createSave(
+							itemName,
+							servingSizeQty,
+							servingSizeUnit,
+							calories,
+							caloriesFromFat,
+							totalFat,
+							saturatedFats,
+							transFat,
+							cholesterol,
+							sodium,
+							carbohydrate,
+							fiber,
+							sugars,
+							protein,
+							vitaminA,
+							vitaminC,
+							calcium,
+							iron
+						);
+						if (savedProduct === true) {
+							history.push("/");
+						} else {
+							//show error
+						}
+					}}>
+					Submit
+				</button>
 			</div>
 			<section className="performance-facts">
 				<header className="performance-facts__header">

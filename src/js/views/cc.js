@@ -43,7 +43,7 @@ export const Cc = () => {
 											product.fields["nf_vitamin_a_dv"]
 										}/${product.fields["nf_vitamin_c_dv"]}/${product.fields["nf_calcium_dv"]}/${
 											product.fields["nf_iron_dv"]
-										}
+										}/${product.fields["item_name"]}
 											
 										`}>
 										<h2>{product.fields["item_name"]}</h2>

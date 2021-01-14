@@ -69,6 +69,67 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 
+			createSave: (
+				param1,
+				param2,
+				param3,
+				param4,
+				param5,
+				param6,
+				param7,
+				param8,
+				param9,
+				param10,
+				param11,
+				param12,
+				param13,
+				param14,
+				param15,
+				param16,
+				param17,
+				param18
+			) => {
+				const store = getStore();
+				const data = {
+					item_name: param1,
+					user_id: store.currentUser.id,
+					nf_serving_size_qty: param2,
+					nf_serving_size_unit: param3,
+					nf_calories: param4,
+					nf_calories_from_fat: param5,
+					nf_total_fat: param6,
+					nf_saturated_fats: param7,
+					nf_trans_fatty_acid: param8,
+					nf_cholesterol: param9,
+					nf_sodium: param10,
+					nf_total_carbohydrate: param11,
+					nf_dietary_fiber: param12,
+					nf_sugars: param13,
+					nf_protein: param14,
+					nf_vitamin_a_dv: param15,
+					nf_vitamin_c_dv: param16,
+					nf_calcium_dv: param17,
+					nf_iron_dv: param18
+				};
+
+				const url = `${apiUrl}/create-intake`;
+
+				fetch(url, {
+					method: "POST", // or 'PUT'
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(data)
+				})
+					.then(response => response.json())
+					.then(data => {
+						console.log("Success:", data);
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
+			},
+
 			loginUser: async (param5, param6) => {
 				const url = `${apiUrl}/login`;
 				console.log(param5, param6);
