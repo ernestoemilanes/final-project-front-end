@@ -104,7 +104,7 @@ export const Createacc = () => {
 												//show error
 											}
 										}}>
-										Submit
+										<i className="far fa-heart" />
 									</button>
 								</div>
 							</fieldset>

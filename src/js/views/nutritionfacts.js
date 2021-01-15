@@ -33,12 +33,17 @@ export const NutritionFacts = props => {
 				<Navigation />
 			</div>
 			<div className="text-center">
-				<button type="button" className="btn btn-warning btn-class mr-3" onClick={e => history.goBack()}>
-					{"Go Back"}
+				<button
+					type="button"
+					className="btn btn-dark btn-class mr-3"
+					onClick={e => history.goBack()}
+					style={{ backgroundColor: "black" }}>
+					<i className="fas fa-arrow-left" style={{ backgroundColor: "black" }} /> {"Go Back"}
 				</button>
 				<button
 					type="button"
-					className="btn btn-success btn-class ml-3"
+					className="btn btn-danger btn-class ml-3"
+					style={{ backgroundColor: "red" }}
 					onClick={async () => {
 						const savedProduct = await actions.createSave(
 							itemName,
@@ -66,7 +71,7 @@ export const NutritionFacts = props => {
 							//show error
 						}
 					}}>
-					Submit
+					Save <i className="fas fa-heart" style={{ backgroundColor: "red" }} />
 				</button>
 			</div>
 			<section className="performance-facts mt-5">
