@@ -42,6 +42,7 @@ export const Navigation = () => {
 										</Link>
 										<div className="dropdown-content">
 											<Link to="/cc">Nutrition Values</Link>
+											<Link to="/favorites">Favorite Nutrition Labels</Link>
 											{/* <Link to="/workouts">Workouts</Link> */}
 											<Link to="/bmr">BMR (Basal Metabolic Rate)</Link>
 											<Link to="/bmi">BMI (Body Mass Index) </Link>

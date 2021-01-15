@@ -16,6 +16,7 @@ import { NutritionFacts } from "./views/nutritionfacts";
 import injectContext from "./store/appContext";
 import "../styles/home.scss";
 import "../styles/cc.scss";
+import { Favorites } from "./views/favorites";
 
 //create your first component
 const Layout = () => {
@@ -37,6 +38,7 @@ const Layout = () => {
 							path="/nutritionfacts/:id/:name/:nf_calories/:nf_calories_from_fat/:nf_protein/:nf_serving_size_qty/:nf_serving_size_unit/:nf_servings_per_container/:nf_total_fat/:nf_saturated_fat/:nf_trans_fatty_acid/:nf_cholesterol/:nf_sodium/:nf_total_carbohydrate/:nf_dietary_fiber/:nf_sugars/:nf_vitamin_a_dv/:nf_vitamin_c_dv/:nf_calcium_dv/:nf_iron_dv/:item_name"
 							component={NutritionFacts}
 						/>
+						<Route exact path="/favorites" component={Favorites} />
 						<Route exact path="/bmi" component={Bmi} />
 						<Route exact path="/bmr" component={Bmr} />
 						<Route exact path="/login" component={Login} />

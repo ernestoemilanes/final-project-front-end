@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Navigation } from "../component/navigation";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
 export const NutritionFacts = props => {
 	const { store, actions } = useContext(Context);
@@ -25,16 +26,19 @@ export const NutritionFacts = props => {
 	const [calcium, setCalcium] = useState(props.match.params.nf_calcium_dv);
 	const [iron, setIron] = useState(props.match.params.nf_iron_dv);
 	const productId = props.match.params.id;
-	console.log(props);
+	const history = useHistory();
 	return (
 		<>
 			<div>
 				<Navigation />
 			</div>
 			<div className="text-center">
+				<button type="button" className="btn btn-warning btn-class mr-3" onClick={e => history.goBack()}>
+					{"Go Back"}
+				</button>
 				<button
 					type="button"
-					className="btn btn-success btn-class"
+					className="btn btn-success btn-class ml-3"
 					onClick={async () => {
 						const savedProduct = await actions.createSave(
 							itemName,
@@ -65,7 +69,7 @@ export const NutritionFacts = props => {
 					Submit
 				</button>
 			</div>
-			<section className="performance-facts">
+			<section className="performance-facts mt-5">
 				<header className="performance-facts__header">
 					<h1 className="performance-facts__title">Nutrition Facts</h1>
 					<p>
