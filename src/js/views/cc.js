@@ -12,7 +12,7 @@ export const Cc = () => {
 			<div>
 				<Navigation />
 			</div>
-			<div className="text-center">
+			<div className="text-center mt-3">
 				<input type="input" name="product" placeholder="product" onChange={e => setProduct(e.target.value)} />
 				<button
 					id="ccButton"
@@ -46,7 +46,9 @@ export const Cc = () => {
 										}/${product.fields["item_name"]}
 											
 										`}>
-										<h2>{product.fields["item_name"]}</h2>
+										<h2 style={{ fontSize: "20px" }} className="mt-5">
+											{product.fields["item_name"]}
+										</h2>
 									</Link>
 								</li>
 								// {store.productInfo.length > 0 && store.productInfo[0].fields.nf_serving_size_qty}
@@ -54,7 +56,7 @@ export const Cc = () => {
 						})}
 					</ul>
 				) : (
-					<h2>Example</h2>
+					<h2 className="mt-4">Results:</h2>
 				)}
 			</div>
 		</>

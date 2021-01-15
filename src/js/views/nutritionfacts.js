@@ -71,7 +71,7 @@ export const NutritionFacts = props => {
 							//show error
 						}
 					}}>
-					Save <i className="fas fa-heart" style={{ backgroundColor: "red" }} />
+					Save <i className="fas fa-heart" style={{ backgroundColor: "#F8F9FA" }} />
 				</button>
 			</div>
 			<section className="performance-facts mt-5">

@@ -33,7 +33,12 @@ export const Favorites = props => {
 									}/${userIntake["item_name"]}
 											
 										`}>
-									<h2>{userIntake["item_name"]}</h2>
+									<h1>
+										Favorites <i className="fas fa-heart" style={{ backgroundColor: "red" }} />
+									</h1>
+									<h2 style={{ fontSize: "20px" }} className="mt-5">
+										{userIntake["item_name"]}
+									</h2>
 								</Link>
 							</li>
 						);
